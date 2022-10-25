@@ -1,0 +1,272 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  color: #495057;
+  height: 100vh;
+}
+
+.container {
+  height: 100%;
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 4.8rem;
+  padding-bottom: 2.4rem;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 7fr 13fr;
+  gap: 3.2rem 2.4rem;
+}
+
+.heading-primary {
+  font-size: 3.6rem;
+  font-weight: 400;
+  line-height: 1.1;
+  grid-row: 1;
+  grid-column: 1/ -1;
+}
+
+.btn {
+  display: block;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+  color: #343a40;
+  background-color: #dee2e6;
+  border: 1px solid transparent;
+  transition: all 0.2s;
+}
+
+.btn:focus {
+  outline: none;
+  border: 1px solid currentColor;
+}
+
+.btn-add {
+  justify-self: end;
+  grid-column: 1 / -1;
+  font-size: 1.8rem;
+  font-weight: 500;
+  padding: 0.8rem 1.6rem;
+  margin-top: 1.2rem;
+  border-radius: 6px;
+}
+
+.btn-remove {
+  font-size: 1.4rem;
+  margin-left: auto;
+  background: none;
+  padding: 3px 6px;
+  border: 1px solid transparent;
+  border-bottom: 1px solid currentColor;
+}
+
+.btn-add:hover,
+.btn-sort:hover {
+  background-color: #e9ecef;
+}
+
+.btn-remove:hover {
+  color: #868e96;
+  background: none;
+}
+
+.sort-by {
+  font-size: 1.4rem;
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+}
+
+.btn-sort {
+  font-size: 1.4rem;
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 6px;
+}
+
+.btn-plus {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translate(-100%, -100%);
+
+  font-size: 3.2rem;
+  font-weight: 500;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form {
+  padding: 2.4rem 3.6rem;
+  border-radius: 11px;
+  box-shadow: 0 1.6rem 2.4rem rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  row-gap: 1.6rem;
+  column-gap: 2.4rem;
+  align-self: start;
+}
+
+.label {
+  font-size: 1.6rem;
+}
+
+.input {
+  display: block;
+  width: 100%;
+  border: none;
+  background: none;
+  font-size: 1.6rem;
+  font-family: inherit;
+  color: #868e96;
+  padding: 0.8rem;
+  border-radius: 5px;
+  background-color: #f1f3f5;
+  transition: all 0.3s;
+}
+
+.input:focus {
+  background-color: #f8f9fa;
+  outline: none;
+  color: #495057;
+}
+
+.expenses-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.expenses {
+  list-style: none;
+  overflow: hidden;
+  overflow-y: auto;
+  padding: 2.4rem 3.6rem;
+  border-radius: 11px;
+  box-shadow: 0 1.6rem 3.2rem rgba(0, 0, 0, 0.1);
+  flex: 1;
+}
+
+.expense {
+  padding: 2.4rem 3.2rem;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 3.2rem;
+}
+
+.expense:not(:last-child) {
+  border-bottom: 2px solid #f1f3f5;
+}
+
+.expense-name {
+  display: block;
+  background-color: #e9ecef;
+  padding: 0.4rem 0.8rem;
+  border-radius: 100px;
+  line-height: 1.5;
+  color: #495057;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.expense-date {
+  color: #868e96;
+}
+
+.expense-value {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.expense-options {
+  white-space: nowrap;
+  position: absolute;
+  /* top: -50%; */
+  top: 50%;
+  right: 0;
+  transform: translate(110%, -50%);
+  border-radius: 9px;
+  box-shadow: 0 0.8rem 1.2rem rgba(0, 0, 0, 0.1);
+  list-style: none;
+  z-index: 10;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.expense:last-child .expense-options {
+  top: 150%;
+  transform: translate(110%, -100%);
+}
+
+.expense:first-child .expense-options {
+  top: -50%;
+  transform: translate(110%, 0);
+}
+
+.option {
+  padding: 1.6rem 2.4rem;
+  border-bottom: 1px solid #f1f3f5;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.option:hover {
+  background-color: #f8f9fa;
+}
+
+.expense-name.expense-name-green {
+  background-color: #82c91e;
+  color: #fff;
+}
+
+.expense-name.expense-name-yellow {
+  background-color: #fab005;
+  color: #fff;
+}
+
+.expense-name.expense-name-red {
+  background-color: #fa5252;
+  color: #fff;
+}
+
+.option-text {
+  flex-shrink: 0;
+  color: #495057;
+  font-weight: 400;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}
+
+.hidden {
+  display: none;
+}

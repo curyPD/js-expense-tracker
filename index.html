@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="queries.css" />
+
+    <script defer src="script.js"></script>
+    <title>Expense Tracker</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="heading-primary">Expense Tracker</h1>
+
+      <form class="form">
+        <label for="input-name" class="label">Name</label>
+        <input id="input-name" type="text" class="input input-name" />
+
+        <label for="input-date" class="label">Date</label>
+        <input id="input-date" type="date" class="input input-date" />
+
+        <label for="input-value" class="label">Value</label>
+        <input id="input-value" type="number" class="input input-value" />
+
+        <button class="btn btn-add">Add</button>
+      </form>
+
+      <div class="expenses-container">
+        <ul class="expenses">
+          <!-- <li class="expense">
+            <span class="expense-name">
+              <ul class="expense-options">
+                <li class="option">
+                  <span class="option-name option-name-green">Coffee shop</span>
+                  <p class="option-text">Important</p>
+                </li>
+                <li class="option">
+                  <span class="option-name option-name-yellow"
+                    >Coffee shop</span
+                  >
+                  <p class="option-text">Could've saved up</p>
+                </li>
+                <li class="option">
+                  <span class="option-name option-name-red">Coffee shop</span>
+                  <p class="option-text">A waste of money</p>
+                </li>
+              </ul>
+
+              Coffee shop</span
+            >
+            <span class="expense-date">Yesterday</span>
+            <span class="expense-value">$12</span>
+            <button class="btn btn-remove">Remove</button>
+          </li> -->
+          <!-- <button class="btn btn-plus">&plus;</button> -->
+        </ul>
+
+        <div class="sort-by">
+          Sort by:
+          <button class="btn btn-sort btn-sort-value">Value</button>
+          <button class="btn btn-sort btn-sort-date">Date</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="overlay hidden"></div>
+  </body>
+</html>
